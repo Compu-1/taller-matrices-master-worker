@@ -1,0 +1,17 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    implementation project(':common')
+}
+
+application {
+    mainClass = 'co.icesi.matrix.client.ClientMain'
+}
+
+task runClient(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'co.icesi.matrix.client.ClientMain'
+    standardInput = System.in
+}
